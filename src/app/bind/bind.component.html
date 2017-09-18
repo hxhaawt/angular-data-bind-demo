@@ -1,0 +1,124 @@
+
+<p>
+    bind works!
+</p>
+<button (click)="onClickMe($event)">点击我</button>
+<br>
+<button (click)="onClickMe($event)" disabled>不能点击</button>
+<br>
+<!-- 事件绑定用 () 默认是单向的 -->
+<!--<input value="Tom" (input)="doOnInpuuut($event)"><br>-->
+
+<!-- ngModel 双向数据绑定 -->
+<input type="text" name="username" [(ngModel)]="username" >
+{{ username }}
+<br>
+
+<br>
+<p>这是管道测试 </p>
+<!-- date uppercase 是angular 内部的过滤器-->
+<p>当前日期是 {{ currentDate | date | uppercase }} </p>
+<p>当前日期是 {{ currentDate | date: 'yyyy-MM-dd HH:mm:ss'}} </p>
+<!-- number 管道来格式数字 ‘2.1-5 表示整数为2位，小数最少为1位，最多为5位显示’-->
+<p>圆周率是 {{ pi | number: '2.2-2'}}</p>
+<p>圆周率是 {{ pi | number: '2.1-5'}}</p>
+
+<p>这是自定义管道测试 </p>
+<p> {{ testVal | multiple}} </p>
+<p> {{ testVal | multiple: '2'}} </p>
+
+<table>
+    <tr>
+        <td [attr.colspan]="size">111</td>
+    </tr>
+    <tr>
+        <td>222</td>
+        <td>333</td>
+        <td>233</td>
+    </tr>
+</table>
+
+<!-- 这样写 类 d 会完全被 divClass 这个取代 -->
+<div class="d" [class]="divClass">
+    测试文字
+</div>
+<!-- 这样写 类 c d 不会被 b 取代，而 b 会根据isBig的值是否为真而加入进来-->
+<div class="c d" [class.b]="isBig">
+    测试文字
+</div>
+
+<!-- divClass2 是一个对象，内部有类是否显示 -->
+<div [ngClass]="divClass2">
+    测试文字
+</div>
+/
+<!-- 这是通过样式绑定-->
+<div [style.color]="isDev ? 'red': 'blue'">
+    测试文字
+</div>
+
+<div [style.font-size.px]="isDev ? '15': '30'">
+    测试文字
+</div>
+
+
+<div [ngStyle]="divStyle">
+    测试文字
+</div>
+
+
+<img [src]="imgUrl">
+<img src="{{ imgUrl }}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
